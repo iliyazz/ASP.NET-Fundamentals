@@ -97,11 +97,5 @@
             await this.bookService.DeleteBookAsync(id);
             return RedirectToAction(nameof(All));
         }
-
-        public async Task<IActionResult> MyBooks()
-        {
-            var models = await this.bookService.GetByOwnerBooksAsync(GetUserId());
-            return this.View(models);
-        }
     }
 }

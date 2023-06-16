@@ -26,8 +26,7 @@ namespace Library.Data
                    ImageUrl = "https://img.freepik.com/free-psd/book-cover-mock-up-arrangement_23-2148622888.jpg?w=826&t=st=1666106877~exp=1666107477~hmac=5dea3e5634804683bccfebeffdbde98371db37bc2d1a208f074292c862775e1b",
                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                    CategoryId = 1,
-                   Rating = 9.5m,
-                   OwnerId = "1"
+                   Rating = 9.5m
                });
 
             builder
@@ -66,12 +65,6 @@ namespace Library.Data
             builder.Entity<Book>()
                 .Property(x => x.Rating)
                 .HasPrecision(4, 2);
-
-            //builder.Entity<Book>(b =>
-            //{
-            //    b.ConfigureByConvention();
-            //});
-
 
             base.OnModelCreating(builder);
         }

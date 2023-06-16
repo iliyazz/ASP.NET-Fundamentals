@@ -14,6 +14,5 @@
         Task <AddNewBookViewModel?> GetBookByIdForEditAsync(int id);
         Task EditBookAsync(AddNewBookViewModel model, int id);
         Task DeleteBookAsync(int id);
-        Task<IEnumerable<AllBookViewModel>> GetByOwnerBooksAsync(string getUserId);
     }
 }

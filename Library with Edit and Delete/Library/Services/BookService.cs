@@ -3,7 +3,6 @@
     using Contracts;
     using Data;
     using Data.Models;
-    using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Models;
 
@@ -184,23 +183,5 @@
                 await this.dbContext.SaveChangesAsync();
             }
         }
-
-        public async Task<IEnumerable<AllBookViewModel>> GetByOwnerBooksAsync(string getUserId)
-        {
-            var myBooks = await this.dbContext                .UsersBooks
-                .Where(b => b.CollectorId == getUserId)
-                .Select(b => new AllBookViewModel
-                {
-                    Id = b.Book.Id,
-                    Title = b.Book.Title,
-                    Author = b.Book.Author,
-                    ImageUrl = b.Book.ImageUrl,
-                    Rating = b.Book.Rating,
-                    Category = b.Book.Category.Name
-                })
-                .ToListAsync();
-            return myBooks;
-        }
-
     }
 }

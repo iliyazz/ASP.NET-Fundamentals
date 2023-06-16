@@ -7,7 +7,7 @@
     using static Library.Common.EntityValidationConstants.Book;
 
     [Comment("Contains all books in the library.")]
-    public class Book : IdentityUser
+    public class Book
     {
         [Comment("Book's primary key.")]
         [Key]
@@ -48,9 +48,6 @@
 
         public ICollection<IdentityUserBook> UsersBooks { get; set; } = new HashSet<IdentityUserBook>();
 
-        [Required]
-        public string OwnerId { get; set; } = null!;
-        public virtual IdentityUser Owner { get; set; } = null!;
 
     }
 }
